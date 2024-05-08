@@ -1,11 +1,17 @@
 import { StyledHomePage } from "./style"
+import { useNavigate } from "react-router-dom"
 
 export const HomePage = () => {
+    const navigate = useNavigate();
+
+    const returnToLogin = () => {
+        navigate("/")
+    }
     return (
         <StyledHomePage>
             <header>
                 <h1>HubSim</h1>
-                <button>Back</button>
+                <button onClick={returnToLogin}>Back</button>
             </header>
 
             <div>

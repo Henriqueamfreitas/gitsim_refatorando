@@ -1,6 +1,17 @@
 import { StyledRegisterForm } from "./style"
+import { useNavigate } from "react-router-dom"
 
 export const RegisterForm = () => {
+    const navigate = useNavigate();
+
+    const returnToLogin = () => {
+        navigate("/")
+    }
+
+    const register = () => {
+        navigate("/")
+    }
+
     return(
         <StyledRegisterForm>
             <h2>Create your account</h2>
@@ -48,7 +59,7 @@ export const RegisterForm = () => {
                 </select>
             </div>           
 
-            <button type="submit">Register</button> 
+            <button onClick={register} type="submit">Register</button> 
         </StyledRegisterForm>
     )
 }
