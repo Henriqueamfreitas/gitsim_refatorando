@@ -1,65 +1,97 @@
+import { registerFormSchema } from "./registerFormSchema";
 import { StyledRegisterForm } from "./style"
 import { useNavigate } from "react-router-dom"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Input } from "../Input";
 
 export const RegisterForm = () => {
     const navigate = useNavigate();
 
-    const returnToLogin = () => {
-        navigate("/")
-    }
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: zodResolver(registerFormSchema),
+    })
 
-    const register = () => {
+    const submit = (formData) => {
+        console.log(formData)
         navigate("/")
     }
 
     return(
-        <StyledRegisterForm>
+        <StyledRegisterForm onSubmit={handleSubmit(submit)}>
             <h2>Create your account</h2>
             <span>fast and free, let's go</span>
 
-            <div>
-                <label htmlFor="name">Name</label>
-                <input type="text" name="name" placeholder="Enter your name here" />
-            </div>
+            <Input
+                label="Name"
+                error={errors.name ? <p>{errors.name.message}</p> : null}
+                htmlFor="name"
+                type="text"
+                name="name"
+                placeholder="Enter your name here"
+                {...register("name")}
+            />
 
-            <div>
-                <label htmlFor="email">E-mail</label>
-                <input type="email" name="email" placeholder="Enter your E-mail here" />
-            </div>
+            <Input
+                label="E-mail"
+                error={errors.email ? <p>{errors.email.message}</p> : null}
+                htmlFor="email"
+                type="email"
+                name="email"
+                placeholder="Enter your email here"
+                {...register("email")}
+            />
 
-            <div>
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" placeholder="Enter your password here" />
-            </div>
+            <Input
+                label="Password"
+                error={errors.password ? <p>{errors.password.message}</p> : null}
+                htmlFor="password"
+                type="password"
+                name="password"
+                placeholder="Enter your password here"
+                {...register("password")}
+            />
 
-            <div>
-                <label htmlFor="confirmPassword">Confirm Password</label>
-                <input type="password" name="confirmPassword" placeholder="Confirm your password here" />
-            </div>
+            <Input
+                label="Confirm password"
+                error={errors.confirmPassword ? <p>{errors.confirmPassword.message}</p> : null}
+                htmlFor="confirmPassword"
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm your password here"
+                {...register("confirmPassword")}
+            />
 
-            <div>
-                <label htmlFor="bio">Bio</label>
-                <input type="text" name="bio" placeholder="Tell us about yourself" />
-            </div>            
+            <Input
+                label="Bio"
+                error={errors.bio ? <p>{errors.bio.message}</p> : null}
+                htmlFor="bio"
+                type="text"
+                name="bio"
+                placeholder="Tell us about yourself"
+                {...register("bio")}
+            />
 
-            <div>
-                <label htmlFor="contact">Contact</label>
-                <input type="text" name="contact" placeholder="Enter your contact here" />
-            </div>            
+            <Input
+                label="Contact"
+                error={errors.contact ? <p>{errors.contact.message}</p> : null}
+                htmlFor="contact"
+                type="text"
+                name="contact"
+                placeholder="Enter your contact here"
+                {...register("contact")}
+            />
 
-            <div>
-                <label htmlFor="course">Course</label>
-                <select name="course">
-                    <option value="">Select your course</option>
-                    <option value="Introduction to Python Programming">Introduction to Python Programming</option>
-                    <option value="Java Programming Fundamentals">Java Programming Fundamentals</option>
-                    <option value="JavaScript for Beginners: From Zero to Hero">JavaScript for Beginners: From Zero to Hero</option>
-                    <option value="iOS App Development with Swift">iOS App Development with Swift</option>
-                    <option value="Android App Development: Kotlin Basics">Android App Development: Kotlin Basics</option>
-                </select>
-            </div>           
+            <Input
+                label="Course"
+                error={errors.course ? <p>{errors.course.message}</p> : null}
+                select={true}
+                htmlFor="course"
+                name="course"
+                {...register("course")}
+            />
 
-            <button onClick={register} type="submit">Register</button> 
+            <button type="submit">Register</button> 
         </StyledRegisterForm>
     )
 }
