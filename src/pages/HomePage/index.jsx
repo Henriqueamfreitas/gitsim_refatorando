@@ -5,12 +5,16 @@ import { Link } from "react-router-dom";
 export const HomePage = ({ user, setUser }) => {
     const navigate = useNavigate()
 
+    const logout = () => {
+        setUser(null)
+        navigate("/")
+    }
 
     return (
         <StyledHomePage>
             <header>
                 <h1>HubSim</h1>
-                <Link to="/">Back</Link>
+                <button onClick={logout}>Back</button>
             </header>
 
             <div>
