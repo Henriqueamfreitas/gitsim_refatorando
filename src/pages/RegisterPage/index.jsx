@@ -1,19 +1,18 @@
 import { StyledRegisterPage } from "./style"
 import { RegisterForm } from "../../components/RegisterForm"
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export const RegisterPage = () => {
-    const navigate = useNavigate();
-
-    const returnToLogin = () => {
-        navigate("/")
-    }
+    const navigate = useNavigate()
     
     return(
         <StyledRegisterPage>
             <header>
                 <h1>HubSim</h1>
-                <button onClick={returnToLogin}>Back</button>
+                <Link to="/">
+                    Back
+                </Link>
             </header>
             <RegisterForm />
         </StyledRegisterPage>

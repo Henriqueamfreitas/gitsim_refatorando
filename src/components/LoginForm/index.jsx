@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { loginFormSchema } from "./loginFormSchema"
 import { Input } from "../Input"
+import { Link } from "react-router-dom"
 
 export const LoginForm = () => {
     const navigate = useNavigate()
@@ -47,7 +48,9 @@ export const LoginForm = () => {
 
             <button type="submit">Login</button>
             <p>Don't have an account yet?</p>
-            <button onClick={registerBtn} type="button">Register</button>
+            <Link to="register">
+                Register
+            </Link>
         </StyledLoginForm>
     )
 }

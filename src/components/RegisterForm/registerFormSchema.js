@@ -13,7 +13,7 @@ export const registerFormSchema = z.object({
    confirmPassword: z.string().nonempty("Confirm password is required"),
    bio: z.string().nonempty("Bio is required"),
    contact: z.string().nonempty("Contact is required"),
-   course: z.string().nonempty("Course is required"),
+   course_module: z.string().nonempty("Course is required"),
 }).refine(({password, confirmPassword}) => password === confirmPassword, {
    message: "Passwords don't match.",
    path: ["confirmPassword"],

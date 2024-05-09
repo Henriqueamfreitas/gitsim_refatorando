@@ -4,6 +4,10 @@ import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "../Input";
+import { api } from "../../services/api";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 export const RegisterForm = () => {
     const navigate = useNavigate();
@@ -12,9 +16,17 @@ export const RegisterForm = () => {
         resolver: zodResolver(registerFormSchema),
     })
 
-    const submit = (formData) => {
-        console.log(formData)
-        navigate("/")
+    const submit = async (formData) => {
+        delete formData.confirmPassword
+        try{
+            const response = await api.post("/users", formData)
+            toast.success("Congratulations! You're now registered.")
+            setTimeout(() => {
+                navigate("/")
+            }, 5000)
+        } catch (error) {
+            toast.error(error.response.data.message)
+        }
     }
 
     return(
@@ -88,10 +100,11 @@ export const RegisterForm = () => {
                 select={true}
                 htmlFor="course"
                 name="course"
-                {...register("course")}
+                {...register("course_module")}
             />
 
             <button type="submit">Register</button> 
+            <ToastContainer />
         </StyledRegisterForm>
     )
 }
