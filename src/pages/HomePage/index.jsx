@@ -26,7 +26,7 @@ export const HomePage = ({ user, setUser }) => {
 
             <div>
                 <StyledH2 fontSize="18" fontWeight="700" color="grey0">What a shame! We're under development {":("}</StyledH2>
-                <StyledSpan fontSize="12" fontWeight="600" color="grey1">
+                <StyledSpan fontSize="16" fontWeight="400" color="grey">
                     Our application is under development. Stay tuned for updates!
                 </StyledSpan>
             </div>

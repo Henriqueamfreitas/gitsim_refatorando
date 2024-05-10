@@ -12,7 +12,7 @@ export const RegisterPage = () => {
         <StyledRegisterPage>
             <header>
                 <StyledH1 fontSize="18" fontWeight="900" color="primary"> HubSim</StyledH1>
-                <StyledLink backgroundcolor="grey1"  to="/">
+                <StyledLink backgroundcolor="grey3"  to="/">
                     Back
                 </StyledLink>
             </header>
