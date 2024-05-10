@@ -53,9 +53,9 @@ export const HeadlineStyles = css`
             case "primary":
                 return "var(--color-primary)"
             case "primaryFocus":
-                return "var(--color-primary)-focus"
+                return "var(--color-primary-focus)"
             case "primaryNegative":
-                return "var(--color-primary)-negative"
+                return "var(--color-primary-negative)"
             case "success":
                 return "var(--color-success)"
             case "negative":

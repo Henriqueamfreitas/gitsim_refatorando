@@ -2,6 +2,7 @@ import { StyledHomePage } from "./style"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom";
 import { StyledH2, StyledSpan, StyledH1 } from "../../styles/typography.js"
+import { StyledButton } from "../../styles/button.js"
 
 export const HomePage = ({ user, setUser }) => {
     const navigate = useNavigate()
@@ -15,7 +16,7 @@ export const HomePage = ({ user, setUser }) => {
         <StyledHomePage>
             <header>
                 <StyledH1 fontSize="18" fontWeight="900" color="primary" >HubSim</StyledH1>
-                <button onClick={logout}>Back</button>
+                <StyledButton backgroundcolor="grey3" onClick={logout}>Back</StyledButton>
             </header>
 
             <div>

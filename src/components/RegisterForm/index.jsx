@@ -7,13 +7,14 @@ import { Input } from "../Input"
 import { api } from "../../services/api"
 import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
-import { StyledSpan, StyledH2 } from "../../styles/typography.js"
+import { StyledSpan, StyledH2, StyledP } from "../../styles/typography.js"
+import { StyledButton } from "../../styles/button.js"
 
 
 export const RegisterForm = () => {
     const navigate = useNavigate();
 
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors, dirtyFields,  } } = useForm({
         resolver: zodResolver(registerFormSchema),
     })
 
@@ -37,7 +38,11 @@ export const RegisterForm = () => {
 
             <Input
                 label="Name"
-                error={errors.name ? <p>{errors.name.message}</p> : null}
+                error={
+                    errors.name ? 
+                    <StyledP fontSize="10" fontWeight="400" color="negative">{errors.name.message}</StyledP> : 
+                    null
+                }
                 htmlFor="name"
                 type="text"
                 name="name"
@@ -47,7 +52,11 @@ export const RegisterForm = () => {
 
             <Input
                 label="E-mail"
-                error={errors.email ? <p>{errors.email.message}</p> : null}
+                error={
+                    errors.email ? 
+                    <StyledP fontSize="10" fontWeight="400" color="negative">{errors.email.message}</StyledP> : 
+                    null
+                }
                 htmlFor="email"
                 type="email"
                 name="email"
@@ -57,7 +66,11 @@ export const RegisterForm = () => {
 
             <Input
                 label="Password"
-                error={errors.password ? <p>{errors.password.message}</p> : null}
+                error={
+                    errors.password ? 
+                    <StyledP fontSize="10" fontWeight="400" color="negative">{errors.password.message}</StyledP> : 
+                    null
+                }
                 htmlFor="password"
                 type="password"
                 name="password"
@@ -67,7 +80,11 @@ export const RegisterForm = () => {
 
             <Input
                 label="Confirm password"
-                error={errors.confirmPassword ? <p>{errors.confirmPassword.message}</p> : null}
+                error={
+                    errors.confirmPassword ? 
+                    <StyledP fontSize="10" fontWeight="400" color="negative">{errors.confirmPassword.message}</StyledP> : 
+                    null
+                }
                 htmlFor="confirmPassword"
                 type="password"
                 name="confirmPassword"
@@ -77,7 +94,11 @@ export const RegisterForm = () => {
 
             <Input
                 label="Bio"
-                error={errors.bio ? <p>{errors.bio.message}</p> : null}
+                error={
+                    errors.bio ? 
+                    <StyledP fontSize="10" fontWeight="400" color="negative">{errors.bio.message}</StyledP> : 
+                    null
+                }
                 htmlFor="bio"
                 type="text"
                 name="bio"
@@ -87,7 +108,11 @@ export const RegisterForm = () => {
 
             <Input
                 label="Contact"
-                error={errors.contact ? <p>{errors.contact.message}</p> : null}
+                error={
+                    errors.contact ? 
+                    <StyledP fontSize="10" fontWeight="400" color="negative">{errors.contact.message}</StyledP> : 
+                    null
+                }
                 htmlFor="contact"
                 type="text"
                 name="contact"
@@ -97,14 +122,21 @@ export const RegisterForm = () => {
 
             <Input
                 label="Course"
-                error={errors.course ? <p>{errors.course.message}</p> : null}
+                error={
+                    errors.course_module ? 
+                    <StyledP fontSize="10" fontWeight="400" color="negative">{errors.course_module.message}</StyledP> : 
+                    null
+                }
                 select={true}
-                htmlFor="course"
-                name="course"
+                htmlFor="course_module"
+                name="course_module"
                 {...register("course_module")}
             />
-
-            <button type="submit">Register</button> 
+            {
+                Object.keys(dirtyFields).length>0 ?
+                <StyledButton backgroundcolor="primary" disabled={false} type="submit">Register</StyledButton>:
+                <StyledButton backgroundcolor="primaryNegative" disabled={true} type="submit">Register</StyledButton> 
+            }
             <ToastContainer />
         </StyledRegisterForm>
     )

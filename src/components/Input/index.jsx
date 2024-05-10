@@ -7,7 +7,7 @@ export const Input = forwardRef(({ select, label, error, ...rest }, ref) => {
             <StyledLabel fontSize="10" fontWeight="400" color="grey0">{label}</StyledLabel>
             {
                 select ?
-                    <select ref={ref} {...rest}>
+                    <select ref={ref} {...rest} >
                         <option value="">Select your course</option>
                         <option value="Introduction to Python Programming">Introduction to Python Programming</option>
                         <option value="Java Programming Fundamentals">Java Programming Fundamentals</option>

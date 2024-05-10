@@ -10,6 +10,7 @@ import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
 import { StyledP } from "../../styles/typography.js"
 import { StyledH2 } from "../../styles/typography.js"
+import { StyledButton } from "../../styles/button.js"
 
 export const LoginForm = ({ user, setUser }) => {
     const navigate = useNavigate()
@@ -55,7 +56,7 @@ export const LoginForm = ({ user, setUser }) => {
                 {...register("password")}
             />
 
-            <button type="submit">Login</button>
+            <StyledButton backgroundcolor="primary" type="submit">Login</StyledButton>
             <StyledP fontSize="10" fontWeight="600" color="grey1" >Don't have an account yet?</StyledP>
             <Link to="register">
                 Register
