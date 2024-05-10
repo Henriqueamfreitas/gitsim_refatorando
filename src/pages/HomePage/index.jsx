@@ -1,6 +1,7 @@
 import { StyledHomePage } from "./style"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom";
+import { StyledH2, StyledSpan, StyledH1 } from "../../styles/typography.js"
 
 export const HomePage = ({ user, setUser }) => {
     const navigate = useNavigate()
@@ -13,18 +14,20 @@ export const HomePage = ({ user, setUser }) => {
     return (
         <StyledHomePage>
             <header>
-                <h1>HubSim</h1>
+                <StyledH1 fontSize="18" fontWeight="900" color="primary" >HubSim</StyledH1>
                 <button onClick={logout}>Back</button>
             </header>
 
             <div>
-                <h2>Hello, {user.name}</h2>
-                <p>{user.course_module}</p>
+                <StyledH2 fontSize="18" fontWeight="700" color="grey0">Hello, {user.name}</StyledH2>
+                <StyledSpan fontSize="12" fontWeight="600" color="grey1">{user.course_module}</StyledSpan>
             </div>
 
             <div>
-                <h2>What a shame! We're under development {":("}</h2>
-                <p>Our application is under development. Stay tuned for updates!</p>
+                <StyledH2 fontSize="18" fontWeight="700" color="grey0">What a shame! We're under development {":("}</StyledH2>
+                <StyledSpan fontSize="12" fontWeight="600" color="grey1">
+                    Our application is under development. Stay tuned for updates!
+                </StyledSpan>
             </div>
         </StyledHomePage>
     )

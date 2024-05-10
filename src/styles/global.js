@@ -9,5 +9,12 @@ export const Global = createGlobalStyle`
         --color-grey1: #868E96;
         --color-grey0: #F8F9FA;
         --color-grey: #FFFFFF;
+ 
+        --color-primary: #FF577F;
+        --color-primary-focus: #FF427F;
+        --color-primary-negative: #59323F;
+    
+        --color-success: #3FE864;
+        --color-negative: #E83F5B;
     }
 `

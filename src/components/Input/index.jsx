@@ -1,9 +1,10 @@
 import { forwardRef } from "react"
+import { StyledLabel } from "../../styles/typography"
 
 export const Input = forwardRef(({ select, label, error, ...rest }, ref) => {
     return (
         <div>
-            <label>{label}</label>
+            <StyledLabel fontSize="10" fontWeight="400" color="grey0">{label}</StyledLabel>
             {
                 select ?
                     <select ref={ref} {...rest}>

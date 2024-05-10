@@ -8,6 +8,8 @@ import { Link } from "react-router-dom"
 import { api } from "../../services/api.js"
 import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
+import { StyledP } from "../../styles/typography.js"
+import { StyledH2 } from "../../styles/typography.js"
 
 export const LoginForm = ({ user, setUser }) => {
     const navigate = useNavigate()
@@ -29,13 +31,9 @@ export const LoginForm = ({ user, setUser }) => {
         }
     }
 
-    const registerBtn = () => {
-        navigate("/register")
-    }
-
     return(
         <StyledLoginForm onSubmit={handleSubmit(submit)}>
-            <h2>Login</h2>
+            <StyledH2 fontSize="14" fontWeight="700" color="grey0">Login</StyledH2>
 
             <Input
                 label="E-mail"
@@ -58,7 +56,7 @@ export const LoginForm = ({ user, setUser }) => {
             />
 
             <button type="submit">Login</button>
-            <p>Don't have an account yet?</p>
+            <StyledP fontSize="10" fontWeight="600" color="grey1" >Don't have an account yet?</StyledP>
             <Link to="register">
                 Register
             </Link>

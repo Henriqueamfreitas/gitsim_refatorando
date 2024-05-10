@@ -7,6 +7,7 @@ import { Input } from "../Input"
 import { api } from "../../services/api"
 import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
+import { StyledSpan, StyledH2 } from "../../styles/typography.js"
 
 
 export const RegisterForm = () => {
@@ -31,8 +32,8 @@ export const RegisterForm = () => {
 
     return(
         <StyledRegisterForm onSubmit={handleSubmit(submit)}>
-            <h2>Create your account</h2>
-            <span>fast and free, let's go</span>
+            <StyledH2 fontSize="14" fontWeight="700" color="grey0">Create your account</StyledH2>
+            <StyledSpan fontSize="10" fontWeight="400" color="grey1">fast and free, let's go</StyledSpan>
 
             <Input
                 label="Name"
