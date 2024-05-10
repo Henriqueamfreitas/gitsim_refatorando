@@ -8,8 +8,7 @@ import { Link } from "react-router-dom"
 import { api } from "../../services/api.js"
 import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
-import { StyledP } from "../../styles/typography.js"
-import { StyledH2 } from "../../styles/typography.js"
+import { StyledP, StyledH2 } from "../../styles/typography.js"
 import { StyledButton } from "../../styles/button.js"
 import { StyledLink } from "../../styles/link.js"
 
@@ -39,7 +38,11 @@ export const LoginForm = ({ user, setUser }) => {
 
             <Input
                 label="E-mail"
-                error={errors.email ? <p>{errors.email.message}</p> : null}
+                error={
+                    errors.email ? 
+                    <StyledP fontSize="10" fontWeight="400" color="negative">{errors.email.message}</StyledP> : 
+                    null
+                }
                 htmlFor="email"
                 type="email"
                 name="email"
@@ -49,7 +52,11 @@ export const LoginForm = ({ user, setUser }) => {
 
             <Input
                 label="Password"
-                error={errors.password ? <p>{errors.password.message}</p> : null}
+                error={
+                    errors.password ? 
+                    <StyledP fontSize="10" fontWeight="400" color="negative">{errors.password.message}</StyledP> : 
+                    null
+                }
                 htmlFor="password"
                 type="password"
                 name="password"
