@@ -8,4 +8,5 @@ export const StyledLink = styled(Link)`
     width: fit-content;
     justify-content: center;
     align-items: center;
+    width: calc(100% - 2.796rem);
 `

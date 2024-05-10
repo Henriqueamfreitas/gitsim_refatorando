@@ -3,6 +3,7 @@ import styled, { css } from "styled-components"
 export const StyledButtonOrLink = css`
     height: 2.5rem;
     border-radius: .25rem;
+    width: 100%;
     font-family: "Inter", sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
