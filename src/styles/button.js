@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-export const StyledButton = styled.button`
+export const StyledButtonOrLink = css`
     height: 2.5rem;
     border-radius: .25rem;
     font-family: "Inter", sans-serif;
@@ -25,4 +25,8 @@ export const StyledButton = styled.button`
                 return "var(--color-grey1)"
         }
     }};
+`
+
+export const StyledButton = styled.button`
+    ${StyledButtonOrLink}
 ` 

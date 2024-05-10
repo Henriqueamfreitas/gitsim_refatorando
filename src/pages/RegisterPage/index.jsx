@@ -3,6 +3,7 @@ import { RegisterForm } from "../../components/RegisterForm"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { StyledH1 } from "../../styles/typography"
+import { StyledLink } from "../../styles/link"
 
 export const RegisterPage = () => {
     const navigate = useNavigate()
@@ -11,9 +12,9 @@ export const RegisterPage = () => {
         <StyledRegisterPage>
             <header>
                 <StyledH1 fontSize="18" fontWeight="900" color="primary"> HubSim</StyledH1>
-                <Link to="/">
+                <StyledLink backgroundcolor="grey1"  to="/">
                     Back
-                </Link>
+                </StyledLink>
             </header>
             <RegisterForm />
         </StyledRegisterPage>
