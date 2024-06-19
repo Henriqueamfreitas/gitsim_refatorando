@@ -1,8 +1,11 @@
-# React + Vite
+**Aplicação** 
+O foco será refatorar a lógica criada no projeto simu_courses para arquitetura de contexto, e refinar nosso mecanismo de autenticação, para conseguir implementar por completa, uma autenticação segura a consistente.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**API** 
+Além disso, será utilizada a respectiva API: Kenzie Hub API: https://github.com/Kenzie-Academy-Brasil-Developers/kenziehub-api
 
-Currently, two official plugins are available:
+**React + Vite**
+npm install npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Tecnologias**: React, HTML, Javascript, Styled Components 
+**Link**: 
