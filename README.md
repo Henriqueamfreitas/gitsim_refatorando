@@ -8,4 +8,4 @@ Além disso, será utilizada a respectiva API: Kenzie Hub API: https://github.co
 npm install npm run dev
 
 **Tecnologias**: React, HTML, Javascript, Styled Components 
-**Link**: 
+**Link**: https://refactoring-simu-courses.vercel.app/
